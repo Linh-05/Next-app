@@ -231,16 +231,16 @@ export default async function Home() {
   ];
   return (
     <>
-      <html lang="en" className="{inter.className}">
+      <html lang="en">
         <BannerSection />
-        <ClientSection our={our}/>
-        <ManageSection systems={systems}/>
+        <ClientSection our={our} />
+        <ManageSection systems={systems} />
         <UnlockSection />
-        <AchivementSection achievement={achievement}/>
+        <AchivementSection achievement={achievement} />
         <Unlock2Section />
-        <CaringSection caring={caring}/>
+        <CaringSection caring={caring} />
         <SuscipitSection />
       </html>
-   </>
+    </>
   );
 }

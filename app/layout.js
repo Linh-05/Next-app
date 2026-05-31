@@ -6,7 +6,7 @@ import Footer from "@/components/layout/footer";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="{inter.className}">
       <body>
         <Header />
         <main>{children}</main>

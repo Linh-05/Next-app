@@ -1,17 +1,18 @@
-export default function ManageSection({systems}){
-    return(
-         <section className="manage">
-        <div className="fontmanage">
-          <h1>
-            Manage your entire community <br />
-            in a single system
-          </h1>
+export default function manageSection({ systems }) {
+  return (
+    <section className="manage">
+      <div className="fontmanage">
+        <h1>
+          Manage your entire community <br />
+          in a single system
+        </h1>
 
-          <p>Who is Nextcent suitable for?</p>
-        </div>
+        <p>Who is Nextcent suitable for?</p>
+      </div>
 
-        <div className="cards">
-          {systems && systems.map((item) => {
+      <div className="cards">
+        {systems &&
+          systems.map((item) => {
             return (
               <div className="card" key={item.id}>
                 <div className="icon">
@@ -24,7 +25,7 @@ export default function ManageSection({systems}){
               </div>
             );
           })}
-        </div>
-      </section>
-    )
+      </div>
+    </section>
+  );
 }
