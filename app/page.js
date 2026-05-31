@@ -1,6 +1,18 @@
+import { Inter } from "next/font/google";
 import Image from "next/image";
 import "./page.css";
 import Link from "next/link";
+import BannerSection from "@/components/home/BannerSection";
+import ClientSection from "@/components/home/ClientSection";
+import ManageSection from "@/components/home/ManageSection";
+import UnlockSection from "@/components/home/UnlockSection";
+import AchivementSection from "@/components/home/AchivementSection";
+import Unlock2Section from "@/components/home/Unlock2Section";
+import CaringSection from "@/components/home/CaringSection";
+import SuscipitSection from "@/components/home/SuscipitSection";
+const inter = Inter({
+  variable: "font-inter",
+});
 
 async function getData() {
   await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -8,7 +20,7 @@ async function getData() {
 
 export default async function Home() {
   await getData();
-   throw new Error("Website crashed!");
+  //  throw new Error("Website crashed!");
   const header = [
     {
       id: 1,
@@ -167,281 +179,68 @@ export default async function Home() {
     {
       id: 1,
       title: "About us",
-      url:"/about"
+      url: "/about",
     },
     {
       id: 2,
       title: "Blog",
-      url:"/about/blog"
+      url: "/about/blog",
     },
     {
       id: 3,
       title: "Contact us",
-      url:"/about/blog/contact"
+      url: "/about/blog/contact",
     },
     {
       id: 4,
       title: "Pricing",
-      url:"/about/blog/contact/pricing"
+      url: "/about/blog/contact/pricing",
     },
     {
       id: 5,
       title: "Testimonials",
-      url:"/about/blog/contact/pricing/testimonials"
+      url: "/about/blog/contact/pricing/testimonials",
     },
   ];
   const support = [
     {
       id: 1,
       title: "Help center",
-      url:"/help"
+      url: "/help",
     },
     {
       id: 2,
       title: "Terms of service",
-      url:"/help/terms"
+      url: "/help/terms",
     },
     {
       id: 3,
       title: "Legal",
-      url:"/help/terms/legal"
+      url: "/help/terms/legal",
     },
     {
       id: 4,
       title: "Privacy policy",
-      url:"/help/terms/legal/privacy"
+      url: "/help/terms/legal/privacy",
     },
     {
       id: 5,
       title: "Status",
-      url:"/help/terms/legal/privacy/status"
+      url: "/help/terms/legal/privacy/status",
     },
   ];
   return (
     <>
-      {/* <header>
-        <div className="header-inner">
-          <a className="logo">
-            <img src="/images/logo_nexcent1.png" />
-          </a>
-          <nav>
-            {header.map(function (value) {
-              return <Link key={value.id} href={value.url}>{value.title}</Link>;
-            })}
-          </nav>
-          <div>
-            <a className="login-link">Login</a>
-            <a className="green-btn">Signup</a>
-          </div>
-        </div>
-      </header> */}
-
-      <section className="banner">
-        <div className="lessons">
-          <h1>
-            Lessons and insights <br />
-            <span>from 8 years</span>
-          </h1>
-          <p>
-            Where to grow your business as a photographer: site or social media?
-          </p>
-          <button>Register</button>
-        </div>
-        <div className="logo-lesson">
-          <img src="./images/logo_lesson.png" alt="" />
-        </div>
-      </section>
-
-      <section className="client">
-        <h1 className="fontour">Our Clients</h1>
-        <p className="fontour-2">
-          {" "}
-          We have been working with some Fortune 500+ clients
-        </p>
-        <div className="client-logos">
-          {our.map(function (item) {
-            return <img key={item.id} src={item.icon} />;
-          })}
-        </div>
-      </section>
-
-      <section className="manage">
-        <div className="fontmanage">
-          <h1>
-            Manage your entire community <br />
-            in a single system
-          </h1>
-
-          <p>Who is Nextcent suitable for?</p>
-        </div>
-
-        <div className="cards">
-          {systems.map((item) => {
-            return (
-              <div className="card" key={item.id}>
-                <div className="icon">
-                  <img src={item.icon} alt={item.title} />
-                </div>
-
-                <h1>{item.title}</h1>
-
-                <p>{item.subtitle}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="unlock">
-        <div className="logo-lesson">
-          <img src="/images/unlock_logo.png" alt="" />
-        </div>
-        <div className="lessons">
-          <h1>The unseen of spending three years at Pixelgrade</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
-            amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
-            Pellentesque placerat vestibulum lorem sed porta. Nullam mattis
-            tristique iaculis. Nullam pulvinar sit amet risus pretium auctor.
-            Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec
-            elementum pulvinar odio.
-          </p>
-          <button>Learn More</button>
-        </div>
-      </section>
-      <section className="achievement">
-        <div className="starts">
-          <div className="left">
-            <h1>
-              Helping a local <br />
-              <span>business reinvent itself</span>
-            </h1>
-            <p>We reached here with our hard work and dedication</p>
-          </div>
-          <div className="right">
-            {achievement.map((item) => {
-              return (
-                <div className="icon-achi" key={item.id}>
-                  <img src={item.icon} alt="" />
-
-                  <div className="oneside">
-                    <h1>{item.title}</h1>
-                    <p>{item.subtitle}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      <section className="unlock">
-        <div className="logo-lesson">
-          <img src="/images/customer_logo.png" alt="" />
-        </div>
-        <div className="lessons">
-          <h1>
-            How to design your site footer like <br />
-            we did
-          </h1>
-          <p>
-            Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor,
-            augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque
-            elit erat a magna. Donec quis erat at libero ultrices mollis. In hac
-            habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi
-            facilisis finibus. In euismod augue vitae nisi ultricies, non
-            aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus
-            efficitur quis massa. Praesent felis est, finibus et nisi ac,
-            hendrerit venenatis libero. Donec consectetur faucibus ipsum id
-            gravida.
-          </p>
-          <button>Learn More</button>
-        </div>
-      </section>
-      <section className="caring">
-        <h1>Caring is the new marketing</h1>
-
-        <p>
-          The Nexcent blog is the best place to read about the latest membership
-          insights, trends and more. See who's joining the community, read about
-          how our community are increasing their membership income and lot's
-          more.​
-        </p>
-
-        <div className="caring-content">
-          {caring.map((item) => {
-            return (
-              <div className="caring-container" key={item.id}>
-                <img src={item.icon} alt={item.title} />
-
-                <div className="creating">
-                  <h3>{item.title}</h3>
-
-                  <p className="selec">{item.subtitle}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-      <section className="suscipit">
-        <div className="suscipit-content">
-          <h1>
-            Pellentesque suscipit <br />
-            fringilla libero eu.
-          </h1>
-          <button>Get a Demo</button>
-        </div>
-      </section>
-      {/* <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-left">
-            <img
-              src="/images/logo_nexcent2.png"
-              alt="Nexcent logo"
-              className="footer-logo"
-            />
-
-            <p>
-              Copyright © 2020 Nexcent ltd.
-              <br />
-              All rights reserved
-            </p>
-
-            <div className="icon-mxh">
-              {socialIcons.map((item) => {
-                return <img key={item.id} src={item.icon} alt={item.name} />;
-              })}
-            </div>
-          </div>
-
-          <div className="footer-col">
-            <h3>Company</h3>
-            <ul>
-              {company.map((item) => {
-                return <li key={item.id}>{item.title}</li>;
-              })}
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h3>Support</h3>
-            <ul>
-              {support.map((item) => {
-                return <li key={item.id}>{item.title}</li>;
-              })}
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h3>Stay up to date</h3>
-
-            <div className="email-box">
-              <input type="email" placeholder="Your email address" />
-              <button>➤</button>
-            </div>
-          </div>
-        </div>
-      </footer> */}
-    </>
+      <html lang="en" className="{inter.className}">
+        <BannerSection />
+        <ClientSection our={our}/>
+        <ManageSection systems={systems}/>
+        <UnlockSection />
+        <AchivementSection achievement={achievement}/>
+        <Unlock2Section />
+        <CaringSection caring={caring}/>
+        <SuscipitSection />
+      </html>
+   </>
   );
 }

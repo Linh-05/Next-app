@@ -1,3 +1,5 @@
+import ServicesContainer from "@/components/news/ServicesContainer";
+
 export default function Page(){
-    return <div>Services</div>
+    return <ServicesContainer></ServicesContainer>
 }
